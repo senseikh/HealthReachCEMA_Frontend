@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { getClients, getPrograms, getEnrollments } from "@/apiContext/api";
+import { getClients, getPrograms, getEnrollments, Logout } from "@/apiContext/api";
 import { Bar } from "react-chartjs-2";
 import { useRouter } from "next/navigation";
 import {
@@ -90,8 +90,10 @@ const DoctorDashboard: React.FC = () => {
   const handleFormChange = (formName: string) => {
     setActiveForm(formName);
   };
-  const Logout = () => {
-    localStorage.removeItem("access_token");
+  const handleLogout = () => {
+    // localStorage.removeItem("access_token");
+    Logout();
+    // Redirect to login page or home page
     router.push("/");
   };
 
@@ -366,7 +368,7 @@ const DoctorDashboard: React.FC = () => {
             </button>
 
             <button
-              onClick={Logout}
+              onClick={handleLogout}
               className="block md:inline-block hover:text-gray-300 py-2 md:py-0 transition"
             >
               Logout

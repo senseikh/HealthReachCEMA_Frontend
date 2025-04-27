@@ -6,7 +6,7 @@ import Link from "next/link";
 const Hero: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   // Check if access_token exists in localStorage
-  const isLoggedIn = !!localStorage.getItem("access_token");
+  // const isLoggedIn = !!localStorage.getItem("access_token");
 
   const toggleMenu = () => setIsOpen(!isOpen);
   return (

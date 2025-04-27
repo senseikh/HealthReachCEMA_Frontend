@@ -1,5 +1,5 @@
 import axios from "axios";
-const api_url = "http://localhost:8000/api/";
+const api_url = "https://healthreachcema-backend.onrender.com/api/";
 // const api_url =
 //   process.env.NEXT_PUBLIC_API_URL_PROD || "http://localhost:8000/api/"; // Ensure this is set in your environment variables
 const api = api_url;
@@ -148,3 +148,4 @@ export const getClientProfile = async (clientId: string) => {
   const response = await axios.get(`${api}clients/${clientId}/`);
   return response.data;
 };
+export const Logout = async () => {};

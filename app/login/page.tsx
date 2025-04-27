@@ -21,10 +21,10 @@ const Login: React.FC = () => {
       const result = await login(email, password);
       console.log("SignIn result:", result);
 
-      // Store user data and tokens
-      localStorage.setItem("access_token", result.access);
-      localStorage.setItem("refresh_token", result.refresh);
-      localStorage.setItem("user", JSON.stringify(result.user));
+      // // Store user data and tokens
+      // localStorage.setItem("access_token", result.access);
+      // localStorage.setItem("refresh_token", result.refresh);
+      // localStorage.setItem("user", JSON.stringify(result.user));
 
       console.log("Navigation to doctor page");
       // Use setTimeout to ensure state updates complete before navigation

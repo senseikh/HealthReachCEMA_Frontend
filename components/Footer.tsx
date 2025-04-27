@@ -3,7 +3,6 @@
 import Link from "next/link";
 
 const Footer: React.FC = () => {
-  const isLoggedIn = !!localStorage.getItem("access_token");
 
   // Do not render the footer if the user is logged in
   if (isLoggedIn) {
