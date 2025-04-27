@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { getClients, getPrograms, getEnrollments } from "@/apiContext/api";
 import { Bar } from "react-chartjs-2";
+import { useRouter } from "next/navigation";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -46,7 +47,7 @@ const DoctorDashboard: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeForm, setActiveForm] = useState<string | null>("dashboard");
   const [searchQuery, setSearchQuery] = useState("");
-
+  const router = useRouter();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -88,6 +89,10 @@ const DoctorDashboard: React.FC = () => {
 
   const handleFormChange = (formName: string) => {
     setActiveForm(formName);
+  };
+  const Logout = () => {
+    localStorage.removeItem("access_token");
+    router.push("/");
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -358,6 +363,13 @@ const DoctorDashboard: React.FC = () => {
             >
               <Search className="mr-3" size={18} />
               Advanced Search
+            </button>
+
+            <button
+              onClick={Logout}
+              className="block md:inline-block hover:text-gray-300 py-2 md:py-0 transition"
+            >
+              Logout
             </button>
           </div>
         </nav>

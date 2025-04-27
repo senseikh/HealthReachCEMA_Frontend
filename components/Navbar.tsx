@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link"; 
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // Checks if access_token exists in localStorage
+  // Check if access_token exists in localStorage
   const isLoggedIn = !!localStorage.getItem("access_token");
 
   const Logout = () => {

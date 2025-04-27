@@ -1,7 +1,7 @@
 import axios from "axios";
-
-const api_url =
-  process.env.NEXT_PUBLIC_API_URL_PROD || "http://localhost:8000/api/"; // Ensure this is set in your environment variables
+const api_url = "http://localhost:8000/api/";
+// const api_url =
+//   process.env.NEXT_PUBLIC_API_URL_PROD || "http://localhost:8000/api/"; // Ensure this is set in your environment variables
 const api = api_url;
 
 console.log("api url", api);
